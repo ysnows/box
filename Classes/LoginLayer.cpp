@@ -43,16 +43,31 @@ void LoginLayer::onCreateGameLayer(){
 
 void LoginLayer::login(string user_name, string pwd){
 
-    hPost("user/login", "phone="+user_name+"&pwd="+pwd, [](HttpClient* client, HttpResponse* response){
+    hPost("user/login", "phone="+user_name+"&pwd="+pwd, [this](HttpClient* client, HttpResponse* response){
         if (response->isSucceed()) {
         vector<char> *charVector= response->getResponseData();
         string str(charVector->begin(),charVector->end());
         
+        Document d;
+        d.Parse<rapidjson::kParseDefaultFlags>(str.c_str());
             
             
+        auto code=d["code"].GetInt();
+        auto msg=d["msg"].GetString();
             
-        log("%s",str.c_str());
-       }
+            if (code==OK) {
+                director->replaceScene(MainLayer::createScene());
+                
+            }else{
+                
+            }
+            
+            
+            if (d.HasMember("data")&&d.IsObject()) {
+            
+            
+            }
+      }
     });
     
     

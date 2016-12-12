@@ -3,6 +3,8 @@
 
 #include "LoginLayer.h"
 
+#include "SocketTestLayer.h"
+
 USING_NS_CC;
 
 static cocos2d::Size designResolutionSize = cocos2d::Size(960, 640);
@@ -78,7 +80,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     register_all_packages();
     FileUtils::getInstance()->addSearchPath("res");
     // create a scene. it's an autorelease object
-    auto scene=LoginLayer::createScene();
+    auto scene=SocketTestLayer::createScene();
     // run
     director->runWithScene(scene);
 

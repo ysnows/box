@@ -22,8 +22,8 @@ using namespace rapidjson;
 
 #define BASE_URL "http://123.57.237.129/public/api/"
 
-
-Document jsonDecode(string json);
+#define OK 200 
+#define FAIL 201
 
 void hGet(string url,const ccHttpRequestCallback &callback);
 

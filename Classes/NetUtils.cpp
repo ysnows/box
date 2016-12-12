@@ -9,33 +9,6 @@
 #include "NetUtils.h"
 
 
-Document jsonDecode(string json){
-    
-    Document d;
-    
-    d.Parse(json.c_str());
-    
-    
-    if ( d.IsObject()) {
-        if (d.HasMember("code")) {
-            auto code=d["code"].GetInt();
-        }
-        if (d.HasMember("msg")) {
-            auto msg=d["msg"].GetString();
-        }
-        
-        if (d.HasMember("data")&&d.IsObject()) {
-            
-            
-            
-        }
-    }
-
-    
-    
-}
-
-
 
 void hGet(string url,const ccHttpRequestCallback &callback){
     HttpRequest *request=new HttpRequest();

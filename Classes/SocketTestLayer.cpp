@@ -8,18 +8,20 @@
 
 #include "SocketTestLayer.h"
 
+#include "NetUtils.h"
+
 
 void SocketTestLayer::initThings() {
 
-//    connectServer();
-    http();
+    connectServer();
+//    http();
     
     }
 
 void SocketTestLayer::onCreateGameLayer() {
     addBtn(StringUtils::format("{\"action\":\"login\",\"uid\":%d}", 2), "登录", Vec2(visibleSize.width / 4, visibleSize.height / 8 * 7));
     addBtn("{\"action\":\"exit\"}", "退出", Vec2(visibleSize.width / 4, visibleSize.height / 8 * 6));
-    addBtn("{\"action\":\"enterRoom\",\"uid\":2,\"roomId\":1}", "进入房间", Vec2(visibleSize.width / 4, visibleSize.height / 8 * 5));
+    addBtn("{\"action\":\"enterRoom\",\"uid\":2,\"roomId\":91}", "进入房间", Vec2(visibleSize.width / 4, visibleSize.height / 8 * 5));
     addBtn("{\"action\":\"ok\"}", "准备", Vec2(visibleSize.width / 4, visibleSize.height / 8 * 4));
     addBtn("{\"action\":\"pledge\",\"cashPledge\":100}", "押金", Vec2(visibleSize.width / 4, visibleSize.height / 8 * 3));
     addBtn("{\"action\":\"getCard\"}", "补牌", Vec2(visibleSize.width / 4, visibleSize.height / 8 * 2));
@@ -106,6 +108,20 @@ void SocketTestLayer::receiveData() {
         // 与服务器的连接断开了
         if (result <= 0) break;
         CCLOG("%s", data);
+        
+        Document d;
+        
+        d.Parse(data);
+        if (d.IsObject()) {
+         auto code=d["code"].GetInt();
+            log("%d",code);
+            
+        }
+        
+        
+        
+        
+        
     }
     // 关闭连接
     socket.Close();
