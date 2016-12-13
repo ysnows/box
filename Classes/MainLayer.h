@@ -23,6 +23,8 @@ using namespace cocostudio;
 using namespace cocostudio::timeline;
 
 
+#include "CreateRoomLayer.h"
+
 
 class MainLayer :public Layer {
 

@@ -1,13 +1,13 @@
 //
-//  LoginLayer.h
+//  CreateRoomLayer.h
 //  box
 //
-//  Created by 咸光金 on 2016/12/12.
+//  Created by 咸光金 on 2016/12/13.
 //
 //
 
-#ifndef LoginLayer_h
-#define LoginLayer_h
+#ifndef CreateRoomLayer_h
+#define CreateRoomLayer_h
 
 #include <stdio.h>
 using namespace std;
@@ -22,12 +22,14 @@ using namespace ui;
 using namespace cocostudio;
 using namespace cocostudio::timeline;
 
-#include "NetUtils.h"
+#include "MainLayer.h"
 
-class LoginLayer :public Layer {
+
+
+class CreateRoomLayer :public Layer {
 
 public:
-    CREATE_FUNC(LoginLayer);
+    CREATE_FUNC(CreateRoomLayer);
     virtual bool init();
     static Scene * createScene();
 
@@ -39,12 +41,10 @@ public:
     void onClick(Ref *sender);
 
     void initThings();
-    
-    void login(string user_name,string pwd);
 
 
 public:
-    cocos2d::Size visibleSize;
+    Size visibleSize;
     Director *director;
     Vec2 visibleOrigin;
     Node *_rootLayer;
@@ -54,4 +54,4 @@ public:
 
 
 
-#endif /* LoginLayer_hpp */
+#endif /* CreateRoomLayer_hpp */

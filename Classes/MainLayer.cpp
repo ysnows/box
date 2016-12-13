@@ -22,7 +22,25 @@ void MainLayer::onCreateGameLayer(){
 
    addChild(_rootLayer);
    _rootLayout=static_cast<Layout *>(_rootLayer->getChildByName("Panel_Back"));
-
+    
+   
+    auto layout_panel_2=dynamic_cast<Layout *>(_rootLayout->getChildByName("Panel_2"));
+    
+    auto btn_11=dynamic_cast<Button *>(_rootLayout->getChildByName("Button_11"));
+    btn_11->addClickEventListener([this,layout_panel_2](Ref *sender){
+        layout_panel_2->setVisible(true);
+       });
+    
+    auto btn_14=dynamic_cast<Button *>(layout_panel_2->getChildByName("Button_14"));
+    btn_14->addClickEventListener([this,layout_panel_2](Ref *sender){
+        layout_panel_2->setVisible(false);
+       });
+    
+    auto btn_12=dynamic_cast<Button *>(_rootLayout->getChildByName("Button_12"));
+    btn_12->addClickEventListener([this](Ref *sender){
+        director->replaceScene(CreateRoomLayer::createScene());
+        
+    });
 
 }
 

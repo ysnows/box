@@ -65,7 +65,7 @@ public:
     void addBtn(string content, string name, Vec2 position);
 
 public:
-    Size visibleSize;
+    cocos2d::Size visibleSize;
     Director *director;
     Vec2 visibleOrigin;
     Node *_rootLayer;

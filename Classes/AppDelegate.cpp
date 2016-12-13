@@ -1,17 +1,14 @@
 #include "AppDelegate.h"
 #include "HelloWorldScene.h"
 
-#include "LoginLayer.h"
 
-#include "SocketTestLayer.h"
 
 USING_NS_CC;
 
-static cocos2d::Size designResolutionSize = cocos2d::Size(960, 640);
+static cocos2d::Size designResolutionSize = cocos2d::Size(1136, 640);
 static cocos2d::Size smallResolutionSize = cocos2d::Size(480, 320);
 static cocos2d::Size mediumResolutionSize = cocos2d::Size(1024, 768);
 static cocos2d::Size largeResolutionSize = cocos2d::Size(2048, 1536);
-
 
 AppDelegate::AppDelegate() {
 
@@ -23,10 +20,12 @@ AppDelegate::~AppDelegate()
 
 //if you want a different context,just modify the value of glContextAttrs
 //it will takes effect on all platforms
+
 void AppDelegate::initGLContextAttrs()
 {
     //set OpenGL context attributions,now can only set six attributions:
     //red,green,blue,alpha,depth,stencil
+    
     GLContextAttrs glContextAttrs = {8, 8, 8, 8, 24, 8};
 
     GLView::setGLContextAttrs(glContextAttrs);
@@ -54,13 +53,33 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     // turn on display FPS
     director->setDisplayStats(true);
-
+    
     // set FPS. the default value is 1.0/60 if you don't call this
     director->setAnimationInterval(1.0 / 60);
     
-    // Set the design resolution
-    glview->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, ResolutionPolicy::NO_BORDER);
     Size frameSize = glview->getFrameSize();
+    
+//    float k=1,y=0,x=0;
+//    
+//    k=frameSize.width/designResolutionSize.width;
+//    auto scaleHeight=designResolutionSize.height*k;
+//    
+//    if (scaleHeight<=frameSize.height) {
+//        y=frameSize.height-scaleHeight;
+    
+//       }else{
+//           k=frameSize.height/designResolutionSize.height;
+//           auto scaleWidth=designResolutionSize.width*k;
+//           if (scaleWidth<=frameSize.width) {
+//               x=frameSize.width-scaleWidth;
+//           }
+//           
+//          }
+    //    designResolutionSize.width=designResolutionSize.width+(x/k);
+//    designResolutionSize.height=designResolutionSize.height+(y/k);
+    // Set the design resolution
+    glview->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, ResolutionPolicy::SHOW_ALL);
+    
     // if the frame's height is larger than the height of medium size.
     if (frameSize.height > mediumResolutionSize.height)
     {        
@@ -80,7 +99,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     register_all_packages();
     FileUtils::getInstance()->addSearchPath("res");
     // create a scene. it's an autorelease object
-    auto scene=SocketTestLayer::createScene();
+    auto scene=LoginLayer::createScene();
     // run
     director->runWithScene(scene);
 

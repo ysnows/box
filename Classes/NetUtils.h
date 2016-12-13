@@ -22,6 +22,8 @@ using namespace rapidjson;
 
 #define BASE_URL "http://123.57.237.129/public/api/"
 
+
+
 #define OK 200 
 #define FAIL 201
 

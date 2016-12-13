@@ -18,6 +18,10 @@
 		3100F2C91DF909E000EDF16D /* stdafx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3100F2C01DF909E000EDF16D /* stdafx.cpp */; };
 		3100F2CC1DF909F200EDF16D /* SocketTestLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3100F2CA1DF909F200EDF16D /* SocketTestLayer.cpp */; };
 		3100F2CD1DF909F200EDF16D /* SocketTestLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3100F2CA1DF909F200EDF16D /* SocketTestLayer.cpp */; };
+		318C28D21DFFB61D00B35620 /* SmartRes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 318C28D01DFFB61D00B35620 /* SmartRes.cpp */; };
+		318C28D31DFFB61D00B35620 /* SmartRes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 318C28D01DFFB61D00B35620 /* SmartRes.cpp */; };
+		318C28D71DFFF9D000B35620 /* CreateRoomLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 318C28D51DFFF9D000B35620 /* CreateRoomLayer.cpp */; };
+		318C28D81DFFF9D000B35620 /* CreateRoomLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 318C28D51DFFF9D000B35620 /* CreateRoomLayer.cpp */; };
 		31B78B661DFE548000D9C564 /* CloseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 31B78B581DFE548000D9C564 /* CloseNormal.png */; };
 		31B78B671DFE548000D9C564 /* CloseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 31B78B581DFE548000D9C564 /* CloseNormal.png */; };
 		31B78B681DFE548000D9C564 /* CloseSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 31B78B591DFE548000D9C564 /* CloseSelected.png */; };
@@ -114,13 +118,6 @@
 			remoteGlobalIDString = A07A4C241783777C0073F6A7;
 			remoteInfo = "cocos2dx iOS";
 		};
-		31EB75C51DFEDE38003BC9F9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 507B40FD1C31BDD30067B53E;
-			remoteInfo = "libcocos2d tvOS";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -138,6 +135,10 @@
 		3100F2C31DF909E000EDF16D /* tchar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tchar.h; sourceTree = "<group>"; };
 		3100F2CA1DF909F200EDF16D /* SocketTestLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SocketTestLayer.cpp; sourceTree = "<group>"; };
 		3100F2CB1DF909F200EDF16D /* SocketTestLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketTestLayer.h; sourceTree = "<group>"; };
+		318C28D01DFFB61D00B35620 /* SmartRes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SmartRes.cpp; sourceTree = "<group>"; };
+		318C28D11DFFB61D00B35620 /* SmartRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmartRes.h; sourceTree = "<group>"; };
+		318C28D51DFFF9D000B35620 /* CreateRoomLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CreateRoomLayer.cpp; sourceTree = "<group>"; };
+		318C28D61DFFF9D000B35620 /* CreateRoomLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateRoomLayer.h; sourceTree = "<group>"; };
 		31B78B581DFE548000D9C564 /* CloseNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseNormal.png; sourceTree = "<group>"; };
 		31B78B591DFE548000D9C564 /* CloseSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseSelected.png; sourceTree = "<group>"; };
 		31B78B5D1DFE548000D9C564 /* HelloWorld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HelloWorld.png; sourceTree = "<group>"; };
@@ -274,7 +275,6 @@
 			children = (
 				1AC6FAF9180E9839004C840B /* libcocos2d Mac.a */,
 				1AC6FB07180E9839004C840B /* libcocos2d iOS.a */,
-				31EB75C61DFEDE38003BC9F9 /* libcocos2d tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -332,6 +332,15 @@
 			path = ODSocket;
 			sourceTree = "<group>";
 		};
+		318C28CF1DFFB61300B35620 /* Globals */ = {
+			isa = PBXGroup;
+			children = (
+				318C28D01DFFB61D00B35620 /* SmartRes.cpp */,
+				318C28D11DFFB61D00B35620 /* SmartRes.h */,
+			);
+			path = Globals;
+			sourceTree = "<group>";
+		};
 		31B78B571DFE548000D9C564 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -353,6 +362,8 @@
 				31B78B8D1DFE709E00D9C564 /* MainLayer.h */,
 				31B78B901DFE70BC00D9C564 /* ForgetPwdLayer.cpp */,
 				31B78B911DFE70BC00D9C564 /* ForgetPwdLayer.h */,
+				318C28D51DFFF9D000B35620 /* CreateRoomLayer.cpp */,
+				318C28D61DFFF9D000B35620 /* CreateRoomLayer.h */,
 			);
 			name = layer;
 			sourceTree = "<group>";
@@ -360,6 +371,7 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				318C28CF1DFFB61300B35620 /* Globals */,
 				31FC1E4C1DF8F1EF00B8B342 /* layer */,
 				3100F2CA1DF909F200EDF16D /* SocketTestLayer.cpp */,
 				3100F2CB1DF909F200EDF16D /* SocketTestLayer.h */,
@@ -515,13 +527,6 @@
 			remoteRef = 1AC6FB06180E9839004C840B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		31EB75C61DFEDE38003BC9F9 /* libcocos2d tvOS.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libcocos2d tvOS.a";
-			remoteRef = 31EB75C51DFEDE38003BC9F9 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -581,11 +586,13 @@
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				31B78B9F1DFE838100D9C564 /* NetUtils.cpp in Sources */,
+				318C28D21DFFB61D00B35620 /* SmartRes.cpp in Sources */,
 				31B78B8A1DFE6F6000D9C564 /* LoginLayer.cpp in Sources */,
 				3100F2C81DF909E000EDF16D /* stdafx.cpp in Sources */,
 				31B78B921DFE70BC00D9C564 /* ForgetPwdLayer.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				3100F2CC1DF909F200EDF16D /* SocketTestLayer.cpp in Sources */,
+				318C28D71DFFF9D000B35620 /* CreateRoomLayer.cpp in Sources */,
 				3100F2C41DF909E000EDF16D /* ODSocket.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -596,12 +603,14 @@
 			files = (
 				31B78B8F1DFE709E00D9C564 /* MainLayer.cpp in Sources */,
 				31B78B8B1DFE6F6000D9C564 /* LoginLayer.cpp in Sources */,
+				318C28D81DFFF9D000B35620 /* CreateRoomLayer.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				31B78BA01DFE838100D9C564 /* NetUtils.cpp in Sources */,
 				3100F2C51DF909E000EDF16D /* ODSocket.cpp in Sources */,
 				31B78B931DFE70BC00D9C564 /* ForgetPwdLayer.cpp in Sources */,
 				3100F2CD1DF909F200EDF16D /* SocketTestLayer.cpp in Sources */,
 				3100F2C91DF909E000EDF16D /* stdafx.cpp in Sources */,
+				318C28D31DFFB61D00B35620 /* SmartRes.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				46880B8B19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
 			);

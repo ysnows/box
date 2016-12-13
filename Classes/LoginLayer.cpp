@@ -25,7 +25,6 @@ void LoginLayer::onCreateGameLayer(){
    addChild(_rootLayer);
    _rootLayout=static_cast<Layout *>(_rootLayer->getChildByName("Panel_Back"));
 
-    
     auto btn_1=dynamic_cast<Button *>(_rootLayout->getChildByName("Button_1"));
     btn_1->addClickEventListener([this](Ref *sender){
         login("18354450969","123456");
@@ -50,14 +49,14 @@ void LoginLayer::login(string user_name, string pwd){
         
         Document d;
         d.Parse<rapidjson::kParseDefaultFlags>(str.c_str());
-            
-            
+        
         auto code=d["code"].GetInt();
         auto msg=d["msg"].GetString();
             
             if (code==OK) {
-                director->replaceScene(MainLayer::createScene());
                 
+                
+                director->replaceScene(MainLayer::createScene());
             }else{
                 
             }
