@@ -25,6 +25,7 @@ using namespace cocostudio::timeline;
 
 #include "CreateRoomLayer.h"
 
+#include "NetUtils.h"
 
 class MainLayer :public Layer {
 

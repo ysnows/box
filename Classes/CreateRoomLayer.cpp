@@ -26,11 +26,12 @@ void CreateRoomLayer::onCreateGameLayer(){
     
     auto btn_1=dynamic_cast<Button *>(_rootLayout->getChildByName("Button_1"));
     btn_1->addClickEventListener([this](Ref *sender){
-        director->replaceScene(MainLayer::createScene());
+        
+        auto transition=TransitionProgressOutIn::create(0.3, MainLayer::createScene());
+        director->replaceScene(transition);
+        
         });
-
-
-}
+    }
 
 
 void CreateRoomLayer::onClick(Ref *sender){

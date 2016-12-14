@@ -38,10 +38,38 @@ void MainLayer::onCreateGameLayer(){
     
     auto btn_12=dynamic_cast<Button *>(_rootLayout->getChildByName("Button_12"));
     btn_12->addClickEventListener([this](Ref *sender){
-        director->replaceScene(CreateRoomLayer::createScene());
+        
+        auto transition=TransitionProgressInOut::create(0.3, CreateRoomLayer::createScene());
+        director->replaceScene(transition);
         
     });
-
+    
+    auto btn_13=dynamic_cast<Button *>(_rootLayout->getChildByName("Button_13"));
+    btn_13->addClickEventListener([this](Ref *sender){
+        hGet("main/randomRoom", [this](HttpClient* client, HttpResponse* response){
+            if (response->isSucceed()) {
+                vector<char> *charVector= response->getResponseData();
+                string str(charVector->begin(),charVector->end());
+                
+                Document d;
+                d.Parse<rapidjson::kParseDefaultFlags>(str.c_str());
+                
+                auto code=d["code"].GetInt();
+                auto msg=d["msg"].GetString();
+                
+                if (code==OK) {
+                    int roomId=d["data"].GetInt();
+                                        
+                }else{
+                    
+                }
+            }
+        });
+        
+        
+      
+    });
+    
 }
 
 

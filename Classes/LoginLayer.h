@@ -24,6 +24,9 @@ using namespace cocostudio::timeline;
 
 #include "NetUtils.h"
 
+#include "Common.h"
+
+
 class LoginLayer :public Layer {
 
 public:

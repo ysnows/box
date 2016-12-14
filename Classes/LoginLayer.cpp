@@ -33,8 +33,8 @@ void LoginLayer::onCreateGameLayer(){
 
     auto btn_2=dynamic_cast<Button *>(_rootLayout->getChildByName("Button_2"));
     btn_2->addClickEventListener([this](Ref *sender){
-        director->replaceScene(ForgetPwdLayer::createScene());
-    });
+        switchSceneOut(ForgetPwdLayer::createScene());
+        });
 }
 
 
@@ -54,9 +54,11 @@ void LoginLayer::login(string user_name, string pwd){
         auto msg=d["msg"].GetString();
             
             if (code==OK) {
+                int uid=d["data"].GetInt();
+                string uidStr=StringUtils::format("%d",uid);
+                UserDefault::getInstance()->setStringForKey("uid", uidStr);
                 
-                
-                director->replaceScene(MainLayer::createScene());
+                switchSceneOut(MainLayer::createScene());
             }else{
                 
             }
@@ -68,7 +70,7 @@ void LoginLayer::login(string user_name, string pwd){
             }
       }
     });
-    
+
     
 }
 

@@ -12,13 +12,20 @@
 #include <stdio.h>
 using namespace std;
 
+#include "cocos2d.h"
+USING_NS_CC;
+
 #include "network/HttpClient.h"
-using namespace cocos2d::network;
+using namespace network;
 
 #include "json/rapidjson.h"
 #include "json/document.h"
 
 using namespace rapidjson;
+
+
+
+
 
 #define BASE_URL "http://123.57.237.129/public/api/"
 
